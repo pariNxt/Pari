@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      background: #0d1117;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .login-box {
+      background: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00f0ff;
+      text-align: center;
+      width: 300px;
+    }
+
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #00f0ff;
+      background: #0d1117;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00f0ff;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Ganti dengan data login asli
+      const validUser = "admin";
+      const validPass = "123";
+
+      if (user === validUser && pass === validPass) {
+        // Simpan status login
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "projek3web.html";
+      } else {
+        document.getElementById("error").textContent = "Username atau password salah.";
+      }
+    }
+  </script>
+</body>
+</html>
